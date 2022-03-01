@@ -1,2 +1,8 @@
-<h2 class = "banner">WORD : <%= @win.word %></h2>
-<h2 class = "banner"><%= @win.found %></h2>
+<h1 class ="h1">******** Now your results ********</h1>
+<h2 class = "banner"> YOUR WORD : <%= @longWord %></h2>
+<% if @win == true %>
+  <h2 class = "banner">You Win</h2>
+<% else %>
+  <h2 class = "banner">You Lost</h2>
+<% end %>
+<h2 class = "banner">YOUR SCORE / <%= @score %></h2>

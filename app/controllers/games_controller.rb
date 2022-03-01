@@ -6,19 +6,18 @@ class GamesController < ApplicationController
   end
 
   def score
-    longWord = params[:word]
-    # fetch(`https://wagon-dictionary.herokuapp.com/#{longWord}`)
-    #        .then(response => response.json())
-    #        .then(data =>
-    #          if data.found
-    #            @win = true
-    #          else
-    #            @win = false
-    #          end
-    #        )
-
-    @win = JSON.parse(URI.open("https://wagon-dictionary.herokuapp.com/#{longWord}").read)
-    # response = URI.open("https://wagon-dictionary.herokuapp.com/#{word}")
-    # json = JSON.parse(response.read)
+    @longWord = params[:word]
+    @score = 0
+      @result = JSON.parse(URI.open("https://wagon-dictionary.herokuapp.com/#{@longWord}").read)
+      # response = URI.open("https://wagon-dictionary.herokuapp.com/#{word}")
+      # json = JSON.parse(response.read)
+      @win = @result['found']
+      @score = @result['length']
   end
+
+  def good_letters?
+    @letters.each { |letter| return false if !@longword.include? letter }
+    return true
+  end
+
 end

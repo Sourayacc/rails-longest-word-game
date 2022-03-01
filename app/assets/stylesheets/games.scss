@@ -10,6 +10,7 @@
   margin-top: 10px;
   &:hover {
     background-color: aqua;
+    color: black;
   }
 }
 
@@ -21,6 +22,18 @@
     font-size: 50px;
   }
 }
-.paragraph {
+.h1 {
   border: 4px double #a8a7a7;
+  text-align: center;
+}
+
+.letter {
+  display: flex;
+  margin: 10px 10px;
+}
+.letter1 {
+  margin: 10px 10px;
+  background-color: #0866b3;
+  color: #eaeef1;
+  padding: 10px;
 }
